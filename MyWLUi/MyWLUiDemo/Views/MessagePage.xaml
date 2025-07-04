@@ -1,0 +1,50 @@
+﻿<UserControl
+    x:Class="MyWLUiDemo.Views.MessagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls;assembly=MyWLUi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MyWLUiDemo.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:MyWLUiDemo.ViewModels"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:MessageViewModel />
+    </UserControl.DataContext>
+    <Border Padding="10" BorderThickness="0">
+        <Grid VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button
+                Height="40"
+                My:ElementExten.ButtonType="Primary"
+                Command="{Binding DefaultMessageCommand}"
+                Content="默认Message" />
+            <Button
+                Grid.Row="2"
+                Height="40"
+                My:ElementExten.ButtonType="Error"
+                Command="{Binding ErrorMessageCommand}"
+                Content="错误Message" />
+            <Button
+                Grid.Row="4"
+                Height="40"
+                My:ElementExten.ButtonType="Warning"
+                Command="{Binding WarnMessageCommand}"
+                Content="警告Meaasge" />
+            <Button
+                Grid.Row="6"
+                Height="40"
+                My:ElementExten.ButtonType="Success"
+                Command="{Binding SuccessMessageCommand}"
+                Content="成功Meaasge" />
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,104 @@
+﻿<UserControl
+    x:Class="MyWLUiDemo.Views.TextBoxPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls;assembly=MyWLUi"
+    xmlns:MyEvent="clr-namespace:MyWLUi.Args;assembly=MyWLUi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:eventHelp="clr-namespace:MyWLUiDemo.Args"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:MyWLUiDemo.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:MyWLUiDemo.ViewModels"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:TextBoxViewModel />
+    </UserControl.DataContext>
+    <Border Padding="10" BorderThickness="0">
+        <Grid  VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBox
+                Height="32"
+                My:ElementExten.TextBoxType="Default"
+                My:ElementExten.Watermark="请选择" />
+
+            <TextBox
+                Grid.Row="2"
+                Height="32"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="Search"
+                My:ElementExten.Watermark="搜索">
+                <i:Interaction.Triggers>
+                    <eventHelp:RoutedEventTrigger RoutedEvent="MyEvent:MyEventManager.SearchButtonDown">
+                        <i:InvokeCommandAction Command="{Binding SearchCommand}" />
+                    </eventHelp:RoutedEventTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
+
+            <TextBox
+                Grid.Row="4"
+                Height="32"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="SelectFile"
+                My:ElementExten.Watermark="选择文件" />
+
+            <TextBox
+                Grid.Row="6"
+                Height="32"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="Default"
+                My:ElementExten.Watermark="不可用"
+                IsEnabled="False" />
+
+            <TextBox
+                Grid.Row="8"
+                Height="32"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="Number"
+                My:ElementExten.Watermark="纯数字"
+                InputMethod.IsInputMethodEnabled="False" />
+
+            <TextBox
+                Grid.Row="10"
+                Height="32"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="Phone"
+                My:ElementExten.Watermark="电话号码"
+                InputMethod.IsInputMethodEnabled="False" />
+
+            <My:MyNumericCtr
+                Grid.Row="12"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="Numeric_Type_One" />
+
+            <My:MyNumericCtr
+                Grid.Row="14"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="Numeric_Type_Tow" />
+
+            <My:MyNumericCtr
+                Grid.Row="16"
+                My:ElementExten.CornerRadius="5"
+                My:ElementExten.TextBoxType="Numeric_Type_One"
+                IsReadOnly="True" />
+        </Grid>
+    </Border>
+</UserControl>

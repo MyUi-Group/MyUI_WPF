@@ -1,0 +1,250 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls">
+
+    <Style x:Key="PaginationButtonStyle" TargetType="RadioButton">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border
+                        x:Name="BorderRoot"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="4">
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            UseLayoutRounding="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource Main_Color}" />
+                            <Setter Property="Foreground" Value="{DynamicResource Common_Color}" />
+                            <Setter Property="IsEnabled" Value="False" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MyPageButton" TargetType="{x:Type My:MyPageButtonCtr}">
+        <Setter Property="BorderBrush" Value="#CACACA" />
+        <Setter Property="Foreground" Value="#DDDDDD" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type My:MyPageButtonCtr}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="{DynamicResource Comon_Font_Color_Second}">
+                            <Run Text="共 " />
+                            <Run Text="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=DateSum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Run Text=" 条" />
+                        </TextBlock>
+                        <Grid Grid.Column="1" Margin="20,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                x:Name="PerviewButton"
+                                Width="32"
+                                Height="32"
+                                Margin="0,0,10,0"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=BorderBrush}"
+                                Cursor="Hand"
+                                Foreground="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=Foreground}"
+                                Style="{x:Null}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border
+                                            x:Name="Border_PrevButton"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="4">
+                                            <Image Width="12" Height="8">
+                                                <Image.Source>
+                                                    <DrawingImage>
+                                                        <DrawingImage.Drawing>
+                                                            <DrawingGroup>
+                                                                <DrawingGroup.ClipGeometry>
+                                                                    <RectangleGeometry Rect="0,0,8,13" />
+                                                                </DrawingGroup.ClipGeometry>
+                                                                <GeometryDrawing Brush="#4D4D4D">
+                                                                    <GeometryDrawing.Geometry>
+                                                                        <PathGeometry Figures="M6.57583,0.576172L7.35986,1.36866 2.20793,6.57617 7.35986,11.7837 6.57583,12.5762 0.639864,6.57617 6.57583,0.576172z" FillRule="EvenOdd" />
+                                                                    </GeometryDrawing.Geometry>
+                                                                </GeometryDrawing>
+                                                            </DrawingGroup>
+                                                        </DrawingImage.Drawing>
+                                                    </DrawingImage>
+                                                </Image.Source>
+                                            </Image>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="Border_PrevButton" Property="Opacity" Value="0.6" />
+                                                <Setter TargetName="Border_PrevButton" Property="Background" Value="{DynamicResource Common_Bg_Color}" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="True">
+                                                <Setter TargetName="Border_PrevButton" Property="Opacity" Value="1" />
+                                                <Setter TargetName="Border_PrevButton" Property="Background" Value="{DynamicResource Common_Color}" />
+                                                <Setter TargetName="Border_PrevButton" Property="BorderThickness" Value="1" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <StackPanel
+                                x:Name="ButtonContaNerPanel"
+                                Grid.Column="1"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <StackPanel.Resources>
+                                    <Style BasedOn="{StaticResource PaginationButtonStyle}" TargetType="RadioButton">
+                                        <Setter Property="Margin" Value="4,0,0,0" />
+                                        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=BorderBrush}" />
+                                    </Style>
+                                </StackPanel.Resources>
+                            </StackPanel>
+                            <Button
+                                x:Name="NextButton"
+                                Grid.Column="2"
+                                Width="32"
+                                Height="32"
+                                Margin="10,0,0,0"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Cursor="Hand"
+                                Foreground="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=Foreground}"
+                                Style="{x:Null}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border
+                                            x:Name="Border_NextButton"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="4">
+                                            <Image Width="12" Height="8">
+                                                <Image.Source>
+                                                    <DrawingImage>
+                                                        <DrawingImage.Drawing>
+                                                            <DrawingGroup>
+                                                                <DrawingGroup.ClipGeometry>
+                                                                    <RectangleGeometry Rect="0,0,8,13" />
+                                                                </DrawingGroup.ClipGeometry>
+                                                                <GeometryDrawing Brush="#FF4D4D4D">
+                                                                    <GeometryDrawing.Geometry>
+                                                                        <PathGeometry Figures="M1.42418,0.576172L0.640145,1.36866 5.79208,6.57617 0.640144,11.7837 1.42418,12.5762 7.36014,6.57617 1.42418,0.576172z" FillRule="EvenOdd" />
+                                                                    </GeometryDrawing.Geometry>
+                                                                </GeometryDrawing>
+                                                            </DrawingGroup>
+                                                        </DrawingImage.Drawing>
+                                                    </DrawingImage>
+                                                </Image.Source>
+                                            </Image>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="Border_NextButton" Property="Opacity" Value="0.6" />
+                                                <Setter TargetName="Border_NextButton" Property="Background" Value="{DynamicResource Common_Bg_Color}" />
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="True">
+                                                <Setter TargetName="Border_NextButton" Property="Opacity" Value="1" />
+                                                <Setter TargetName="Border_NextButton" Property="Background" Value="{DynamicResource Common_Color}" />
+                                                <Setter TargetName="Border_NextButton" Property="BorderThickness" Value="1" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Column="2" Margin="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource Comon_Font_Color_Second}"
+                                Text="前往第" />
+                            <TextBox
+                                x:Name="GoPageTextBox"
+                                Grid.Column="1"
+                                Height="32"
+                                MinWidth="32"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                My:ElementExten.TextBoxType="Number"
+                                My:ElementExten.Watermark=""
+                                BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=BorderBrush}"
+                                BorderThickness="1"
+                                Foreground="{DynamicResource Comon_Font_Color_Second}"
+                                InputMethod.IsInputMethodEnabled="False"
+                                Text="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=CurrentPage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock
+                                Grid.Column="2"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource Comon_Font_Color_Second}"
+                                Text="页" />
+                        </Grid>
+
+                        <Grid Grid.Column="3" Margin="10,0,10,0">
+                            <ComboBox
+                                x:Name="Limit_ComBox"
+                                Width="100"
+                                Height="32"
+                                ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=Limits, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedIndex="0"
+                                SelectedValue="{Binding RelativeSource={RelativeSource AncestorType=My:MyPageButtonCtr}, Path=EveryPageShowNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                Style="{DynamicResource MyComboBoxStyle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Run Text="{Binding .}" />
+                                            <Run Text="条/页" />
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource MyPageButton}" TargetType="{x:Type My:MyPageButtonCtr}" />
+
+</ResourceDictionary>

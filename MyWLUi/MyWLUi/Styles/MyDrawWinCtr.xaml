@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls"
+    xmlns:MyConvert="clr-namespace:MyWLUi.Converts">
+
+    <MyConvert:CanvasPosionConvert x:Key="MyCanvasPosionConvert" />
+    <MyConvert:ContentToShowConverter x:Key="MyContentToShowConverter" />
+
+    <Style x:Key="MyDrawWinCtrStyle" TargetType="{x:Type My:MyDrawWinCtr}">
+
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Style.Resources>
+            <ControlTemplate x:Key="MyDrawWinTemplate" TargetType="{x:Type My:MyDrawWinCtr}">
+                <Border
+                    x:Name="Drawer"
+                    Padding="1,5,5,5"
+                    Background="White"
+                    CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="16"
+                            Opacity="1"
+                            ShadowDepth="0"
+                            Color="Gray" />
+                    </Border.Effect>
+                    <Border.RenderTransform>
+                        <TranslateTransform X="0" Y="0" />
+                        <!--  初始位置  -->
+                    </Border.RenderTransform>
+                    <ContentControl Content="{Binding RelativeSource={RelativeSource AncestorType=My:MyDrawWinCtr}, Path=Content}" />
+                </Border>
+
+
+            </ControlTemplate>
+
+
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="DrawDirectionType" Value="Right">
+                <Setter Property="Template" Value="{DynamicResource MyDrawWinTemplate}" />
+            </Trigger>
+
+            <Trigger Property="DrawDirectionType" Value="Left">
+                <Setter Property="Template" Value="{DynamicResource MyDrawWinTemplate}" />
+            </Trigger>
+
+            <Trigger Property="DrawDirectionType" Value="Top">
+                <Setter Property="Template" Value="{DynamicResource MyDrawWinTemplate}" />
+            </Trigger>
+
+            <Trigger Property="DrawDirectionType" Value="Bottom">
+                <Setter Property="Template" Value="{DynamicResource MyDrawWinTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+    <Style BasedOn="{StaticResource MyDrawWinCtrStyle}" TargetType="{x:Type My:MyDrawWinCtr}" />
+
+</ResourceDictionary>

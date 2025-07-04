@@ -1,0 +1,108 @@
+﻿<UserControl
+    x:Class="MyWLUiDemo.Views.ButtonPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls;assembly=MyWLUi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MyWLUiDemo.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Border Padding="10" BorderThickness="0">
+        <Grid VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="5" />
+                <RowDefinition />
+                <RowDefinition Height="50" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button
+                Grid.Row="0"
+                Height="40"
+                My:ElementExten.ButtonType="TypeText"
+                Content="测试按钮" />
+
+
+            <Button
+                Grid.Row="2"
+                Height="40"
+                My:ElementExten.ButtonType="Primary"
+                Content="测试按钮" />
+            <Button
+                Grid.Row="4"
+                Height="40"
+                My:ElementExten.ButtonType="Error"
+                Content="测试按钮" />
+            <Button
+                Grid.Row="6"
+                Height="40"
+                My:ElementExten.ButtonType="Warning"
+                Content="测试按钮" />
+            <Button
+                Grid.Row="8"
+                Height="40"
+                My:ElementExten.ButtonType="Success"
+                Content="测试按钮" />
+            <Button
+                Grid.Row="10"
+                Height="40"
+                My:ElementExten.ButtonType="Icon"
+                My:ElementExten.IcoHeight="40"
+                My:ElementExten.IcoWidth="40"
+                Content="测试按钮" />
+
+            <Button
+                Grid.Row="12"
+                Height="40"
+                My:ElementExten.ButtonType="Primary"
+                Background="Transparent"
+                BorderBrush="{DynamicResource CommonBorder_Color}"
+                BorderThickness="1"
+                Content="测试按钮"
+                Foreground="{DynamicResource Item_Font_1}" />
+
+            <Grid Grid.Row="14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <My:MyExtenControlCtr
+                    Width="100"
+                    Height="40"
+                    Content="测试Mark一"
+                    MarkContent="+99" />
+
+                <My:MyExtenControlCtr
+                    Grid.Column="2"
+                    Width="100"
+                    Height="40"
+                    Content="测试Mark二"
+                    MarkAreaBackGround="{DynamicResource CalendarItemButtonSelect}"
+                    MarkContent="Good" />
+
+                <My:MyExtenControlCtr
+                    Grid.Column="4"
+                    Width="100"
+                    Height="40"
+                    Content="测试Mark三"
+                    MarkAreaBackGround="{DynamicResource Error_Color}"
+                    MarkContent="No" />
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

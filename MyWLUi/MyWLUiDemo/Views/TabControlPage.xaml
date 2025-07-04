@@ -1,0 +1,239 @@
+﻿<UserControl
+    x:Class="MyWLUiDemo.Views.TabControlPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls;assembly=MyWLUi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MyWLUiDemo.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Border Padding="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TabControl
+                Grid.Row="0"
+                Grid.Column="0"
+                My:MyTabControlExten.TabControlType="Line"
+                FontSize="16"
+                TabStripPlacement="Top">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容三" />
+                </TabItem>
+            </TabControl>
+
+            <TabControl
+                Grid.Row="0"
+                Grid.Column="2"
+                My:MyTabControlExten.TabControlType="Line"
+                FontSize="16"
+                TabStripPlacement="Bottom">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容三" />
+                </TabItem>
+            </TabControl>
+
+
+            <TabControl
+                Grid.Row="2"
+                Grid.Column="0"
+                My:MyTabControlExten.TabControlType="Line"
+                FontSize="16"
+                TabStripPlacement="Left">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容三" />
+                </TabItem>
+            </TabControl>
+
+            <TabControl
+                Grid.Row="2"
+                Grid.Column="2"
+                My:MyTabControlExten.TabControlType="Line"
+                FontSize="16"
+                TabStripPlacement="Right">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容三" />
+                </TabItem>
+            </TabControl>
+
+
+            <TabControl
+                Grid.Row="4"
+                Grid.Column="0"
+                My:MyTabControlExten.TabControlType="Card"
+                FontSize="16"
+                TabStripPlacement="Top">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="测试内容三测试内容三测试内容三测试内容三测试内容三测试内容三测试内容三测试内容三测试内容三测试内容三测试内容三" />
+                </TabItem>
+            </TabControl>
+
+            <TabControl
+                Grid.Row="4"
+                Grid.Column="2"
+                My:MyTabControlExten.TabControlType="Card"
+                FontSize="16"
+                TabStripPlacement="Bottom">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容三" />
+                </TabItem>
+            </TabControl>
+
+
+            <TabControl
+                Grid.Row="6"
+                Grid.Column="0"
+                My:MyTabControlExten.TabControlType="Card"
+                FontSize="16"
+                TabStripPlacement="Left">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容三" />
+                </TabItem>
+            </TabControl>
+
+
+            <TabControl
+                Grid.Row="6"
+                Grid.Column="2"
+                My:MyTabControlExten.TabControlType="Card"
+                FontSize="16"
+                TabStripPlacement="Right">
+                <TabItem Header="测试一">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容一" />
+                </TabItem>
+                <TabItem Header="测试二">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容二" />
+                </TabItem>
+                <TabItem Header="测试三">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="测试内容三" />
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Border>
+</UserControl>

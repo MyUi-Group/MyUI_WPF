@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\Git\\MyWLUi\\MyWLUi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{443CFF06-CB56-4738-8A6F-B5EF8B58699B}|MyWLUiDemo\\MyWLUiDemo.csproj|g:\\git\\mywlui\\mywlui\\mywluidemo\\views\\allctrshowpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{443CFF06-CB56-4738-8A6F-B5EF8B58699B}|MyWLUiDemo\\MyWLUiDemo.csproj|solutionrelative:mywluidemo\\views\\allctrshowpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AllCtrShowPage.xaml",
+              "DocumentMoniker": "G:\\Git\\MyWLUi\\MyWLUi\\MyWLUiDemo\\Views\\AllCtrShowPage.xaml",
+              "RelativeDocumentMoniker": "MyWLUiDemo\\Views\\AllCtrShowPage.xaml",
+              "ToolTip": "G:\\Git\\MyWLUi\\MyWLUi\\MyWLUiDemo\\Views\\AllCtrShowPage.xaml",
+              "RelativeToolTip": "MyWLUiDemo\\Views\\AllCtrShowPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-04T10:18:06.16Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

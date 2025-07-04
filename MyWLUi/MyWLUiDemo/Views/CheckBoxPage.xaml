@@ -1,0 +1,55 @@
+﻿<UserControl
+    x:Class="MyWLUiDemo.Views.CheckBoxPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls;assembly=MyWLUi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MyWLUiDemo.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="10" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+        <CheckBox My:ElementExten.CheckBoxType="Square" Content="方形" />
+
+        <CheckBox
+            Grid.Column="2"
+            HorizontalAlignment="Left"
+            My:ElementExten.CheckBoxType="Square"
+            Content="方形"
+            IsEnabled="False" />
+
+        <CheckBox
+            Grid.Column="4"
+            HorizontalAlignment="Left"
+            My:ElementExten.CheckBoxType="Ellipse"
+            Content="圆形" />
+
+
+        <CheckBox
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            My:ElementExten.CheckBoxType="Switch"
+            Content="Switch" />
+
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="2"
+            Orientation="Horizontal">
+            <RadioButton Content="测试一" IsChecked="True" />
+            <RadioButton Margin="10,0,0,0" Content="测试二" />
+        </StackPanel>
+    </Grid>
+</UserControl>

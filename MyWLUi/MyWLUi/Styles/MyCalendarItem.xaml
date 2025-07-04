@@ -1,0 +1,402 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls"
+    xmlns:MyConvert="clr-namespace:MyWLUi.Converts"
+    xmlns:MyEvent="clr-namespace:MyWLUi.Args">
+
+    <PathGeometry x:Key="Left" Figures="M352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256" />
+    <PathGeometry x:Key="DoubleLeft" Figures="M614.997333 511.146667l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.058667 38.058667 0 0 1-25.6-9.728L512.512 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L614.997333 511.146667z m-428.032 0l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.229333 38.229333 0 0 1-25.6-9.728L84.48 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L186.965333 511.146667z" />
+
+    <Style x:Key="MyCalendarButtonStyle" TargetType="{x:Type My:MyCalendarButton}">
+        <Setter Property="Foreground" Value="{DynamicResource Triangle_Fill}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="MinHeight" Value="27" />
+        <Setter Property="MinWidth" Value="27" />
+        <Setter Property="My:ElementExten.MouseHoverBackGround" Value="{DynamicResource CalendarItemButtonHover}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type My:MyCalendarButton}">
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(My:ElementExten.CornerRadius)}">
+                        <Grid
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ContentPresenter
+                                x:Name="NormalText"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(My:ElementExten.MouseHoverBackGround)}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(My:ElementExten.MouseHoverBackGround)}" />
+                        </Trigger>
+                        <Trigger Property="IsToday" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource CalendarItemButtonSelect}" />
+                            <Setter Property="Foreground" Value="{DynamicResource Common_Color}" />
+                        </Trigger>
+                        <Trigger Property="IsHighlight" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource CalendarItemButtonSelect}" />
+                            <Setter Property="Foreground" Value="{DynamicResource Common_Color}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource CalendarItemButtonHover}" />
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Cursor" Value="No" />
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource Common_DisabledColor}" />
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="MyCalendarItemStyle" TargetType="{x:Type My:MyCalendarItem}">
+        <Style.Resources>
+            <ControlTemplate x:Key="MoreDateTemplate" TargetType="{x:Type My:MyCalendarItem}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid
+                        Grid.Row="0"
+                        Height="30"
+                        Background="{DynamicResource Calendar_Head_Bg}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            x:Name="PreviewYear_Button"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoHeight="13"
+                            My:ElementExten.IcoPathData="{StaticResource DoubleLeft}"
+                            My:ElementExten.IcoWidth="13"
+                            My:ElementExten.MouseHoverBackGround="{DynamicResource Calendar_head_Hover}"
+                            Background="{DynamicResource Calendar_Item1}"
+                            RenderTransformOrigin="0.5,0.5" />
+                        <Button
+                            x:Name="Preview_Button"
+                            Grid.Column="1"
+                            Margin="10,0,0,0"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoHeight="10"
+                            My:ElementExten.IcoPathData="{StaticResource Left}"
+                            My:ElementExten.IcoWidth="10"
+                            My:ElementExten.MouseHoverBackGround="{DynamicResource Calendar_head_Hover}"
+                            Background="{DynamicResource Calendar_Item1}"
+                            RenderTransformOrigin="0.5,0.5" />
+
+                        <Button
+                            x:Name="Head_Button"
+                            Grid.Column="2"
+                            Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            My:ElementExten.ButtonType="TypeText"
+                            Content="{Binding DisplayDate, RelativeSource={RelativeSource AncestorType=My:MyCalendar}}"
+                            ContentStringFormat="{}{0:yyyy年MM月}"
+                            FontSize="14"
+                            Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=My:MyCalendar}}" />
+
+
+                        <Button
+                            x:Name="Next_Button"
+                            Grid.Column="3"
+                            Margin="0,0,10,0"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoHeight="10"
+                            My:ElementExten.IcoPathData="{StaticResource Left}"
+                            My:ElementExten.IcoWidth="10"
+                            My:ElementExten.MouseHoverBackGround="{DynamicResource Calendar_head_Hover}"
+                            Background="{DynamicResource Calendar_Item1}"
+                            RenderTransformOrigin="0.5,0.5">
+                            <Button.LayoutTransform>
+                                <RotateTransform Angle="180" />
+                            </Button.LayoutTransform>
+                        </Button>
+
+                        <Button
+                            x:Name="NextYear_Button"
+                            Grid.Column="4"
+                            Margin="0,0,10,0"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoHeight="13"
+                            My:ElementExten.IcoPathData="{StaticResource DoubleLeft}"
+                            My:ElementExten.IcoWidth="13"
+                            My:ElementExten.MouseHoverBackGround="{DynamicResource Calendar_head_Hover}"
+                            Background="{DynamicResource Calendar_Item1}"
+                            RenderTransformOrigin="0.5,0.5">
+                            <Button.LayoutTransform>
+                                <RotateTransform Angle="180" />
+                            </Button.LayoutTransform>
+                        </Button>
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="0,5,0,5">
+                        <Grid>
+                            <Grid x:Name="Date_Contian_Grid">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Hidden" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Month">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.Resources>
+                                    <Style BasedOn="{StaticResource MyCalendarButtonStyle}" TargetType="{x:Type My:MyCalendarButton}">
+                                        <Setter Property="Margin" Value="5,0,5,0" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+
+                            <Grid x:Name="Month_Contian_Grid">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Year">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Decade">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.Resources>
+                                    <Style BasedOn="{StaticResource MyCalendarButtonStyle}" TargetType="{x:Type My:MyCalendarButton}">
+                                        <Setter Property="Margin" Value="5,0,5,0" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Year">
+                                                <Setter Property="MinHeight" Value="30" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </Grid>
+
+
+
+                    </Grid>
+
+                </Grid>
+
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="OneDateTemplate" TargetType="{x:Type My:MyCalendarItem}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid
+                        Grid.Row="0"
+                        Height="40"
+                        Background="{DynamicResource Calendar_Head_Bg}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button
+                            x:Name="Head_Button"
+                            Grid.Column="0"
+                            Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            My:ElementExten.ButtonType="TypeText"
+                            Content="{Binding DisplayDate, RelativeSource={RelativeSource AncestorType=My:MyCalendar}}"
+                            ContentStringFormat="{}{0:yyyy年MM月}"
+                            FontSize="14"
+                            Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=My:MyCalendar}}" />
+
+                        <Button
+                            x:Name="Preview_Button"
+                            Grid.Column="1"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoHeight="10"
+                            My:ElementExten.IcoPathData="{StaticResource Left}"
+                            My:ElementExten.IcoWidth="10"
+                            My:ElementExten.MouseHoverBackGround="{DynamicResource Calendar_head_Hover}"
+                            Background="{DynamicResource Calendar_Item1}"
+                            RenderTransformOrigin="0.5,0.5" />
+
+                        <Button
+                            x:Name="Next_Button"
+                            Grid.Column="2"
+                            Margin="10,0,10,0"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoHeight="10"
+                            My:ElementExten.IcoPathData="{StaticResource Left}"
+                            My:ElementExten.IcoWidth="10"
+                            My:ElementExten.MouseHoverBackGround="{DynamicResource Calendar_head_Hover}"
+                            Background="{DynamicResource Calendar_Item1}"
+                            RenderTransformOrigin="0.5,0.5">
+                            <Button.LayoutTransform>
+                                <RotateTransform Angle="180" />
+                            </Button.LayoutTransform>
+
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="0,5,0,5">
+                        <Grid>
+                            <Grid x:Name="Date_Contian_Grid">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Hidden" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Month">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.Resources>
+                                    <Style BasedOn="{StaticResource MyCalendarButtonStyle}" TargetType="{x:Type My:MyCalendarButton}">
+                                        <Setter Property="Margin" Value="5,0,5,0" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+
+                            <Grid x:Name="Month_Contian_Grid">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Year">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Decade">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.Resources>
+                                    <Style BasedOn="{StaticResource MyCalendarButtonStyle}" TargetType="{x:Type My:MyCalendarButton}">
+                                        <Setter Property="Margin" Value="5,0,5,0" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=My:MyCalendar}, Path=DisplayMode}" Value="Year">
+                                                <Setter Property="MinHeight" Value="30" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </Grid>
+
+
+
+                    </Grid>
+
+                </Grid>
+            </ControlTemplate>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.76" />
+            </Trigger>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(My:ElementExten.DataPickerType)}" Value="One">
+                <Setter Property="Template" Value="{DynamicResource OneDateTemplate}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(My:ElementExten.DataPickerType)}" Value="Double">
+                <Setter Property="Template" Value="{DynamicResource MoreDateTemplate}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style BasedOn="{StaticResource MyCalendarItemStyle}" TargetType="{x:Type My:MyCalendarItem}" />
+
+</ResourceDictionary>

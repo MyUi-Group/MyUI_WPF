@@ -1,0 +1,240 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls"
+    xmlns:MyEvent="clr-namespace:MyWLUi.Args">
+
+
+
+    <Style x:Key="MyNumericStyle" TargetType="{x:Type My:MyNumericCtr}">
+        <Style.Resources>
+            <ControlTemplate x:Key="MyNumeric_type_One_ControlTemplate" TargetType="{x:Type My:MyNumericCtr}">
+                <Border
+                    x:Name="bg"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(My:ElementExten.CornerRadius)}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            x:Name="PART_Reduce_Border"
+                            Grid.Column="0"
+                            Width="40"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoAngle="180"
+                            My:ElementExten.IcoHeight="2"
+                            My:ElementExten.IcoPathData="M801.171 547.589H222.83c-17.673 0-32-14.327-32-32s14.327-32 32-32h578.341c17.673 0 32 14.327 32 32s-14.327 32-32 32z"
+                            My:ElementExten.IcoWidth="13"
+                            Background="{TemplateBinding Foreground}" />
+
+                        <Rectangle
+                            x:Name="mid_rect_one"
+                            Grid.Column="1"
+                            Width="1"
+                            Fill="{TemplateBinding BorderBrush}" />
+                        <Grid
+                            Grid.Column="2"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <TextBox
+                                x:Name="PART_ContentHost"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                My:ElementExten.TextBoxType="Number"
+                                My:ElementExten.Watermark=""
+                                BorderThickness="0"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="{TemplateBinding Foreground}"
+                                InputMethod.IsInputMethodEnabled="False"
+                                IsReadOnly="{Binding RelativeSource={RelativeSource AncestorType=My:MyNumericCtr}, Path=IsReadOnly}"
+                                Text="{Binding RelativeSource={RelativeSource AncestorType=My:MyNumericCtr}, Path=Value}" />
+                        </Grid>
+
+                        <Rectangle
+                            x:Name="mid_rect_tow"
+                            Grid.Column="3"
+                            Width="1"
+                            Fill="{TemplateBinding BorderBrush}" />
+                        <Button
+                            x:Name="PART_Add_Border"
+                            Grid.Column="4"
+                            Width="40"
+                            My:ElementExten.ButtonType="Icon"
+                            My:ElementExten.IcoAngle="180"
+                            My:ElementExten.IcoHeight="16"
+                            My:ElementExten.IcoPathData="M791.457164 482.009422 542.361553 482.009422 542.361553 232.913811c0-17.190122-13.94987-31.139992-31.139992-31.139992-17.190122 0-31.139992 13.94987-31.139992 31.139992l0 249.095611L230.985958 482.009422C213.795836 482.009422 199.845966 495.959292 199.845966 513.149414c0 17.190122 13.94987 31.139992 31.139992 31.139992l249.095611 0 0 249.095611c0 17.224179 13.94987 31.139992 31.139992 31.139992 17.190122 0 31.139992-13.915813 31.139992-31.139992L542.361553 544.289406l249.095611 0c17.224179 0 31.139992-13.94987 31.139992-31.139992C822.597156 495.959292 808.681343 482.009422 791.457164 482.009422L791.457164 482.009422zM791.457164 482.009422"
+                            My:ElementExten.IcoWidth="16"
+                            Background="{TemplateBinding Foreground}" />
+
+                    </Grid>
+
+                </Border>
+
+                <ControlTemplate.Triggers>
+                    <Trigger SourceName="PART_Reduce_Border" Property="IsEnabled" Value="false">
+                        <Setter TargetName="PART_Reduce_Border" Property="Opacity" Value="0.56" />
+                    </Trigger>
+                    <Trigger SourceName="PART_Add_Border" Property="IsEnabled" Value="false">
+                        <Setter TargetName="PART_Add_Border" Property="Opacity" Value="0.56" />
+                    </Trigger>
+
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <!--<Setter TargetName="bg" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+                        <Setter TargetName="left_fill_Tow" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+                        <Setter TargetName="right_fill_Tow" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+                        <Setter TargetName="right_fill_one" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+                        <Setter TargetName="mid_rect_one" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+                        <Setter TargetName="mid_rect_tow" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />-->
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="MyNumeric_type_Tow_ControlTemplate" TargetType="{x:Type My:MyNumericCtr}">
+                <Border
+                    x:Name="bg"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(My:ElementExten.CornerRadius)}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid
+                            Grid.Column="0"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <TextBox
+                                x:Name="PART_ContentHost"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                My:ElementExten.TextBoxType="Number"
+                                My:ElementExten.Watermark=""
+                                BorderThickness="0"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="{TemplateBinding Foreground}"
+                                InputMethod.IsInputMethodEnabled="False"
+                                IsReadOnly="{Binding RelativeSource={RelativeSource AncestorType=My:MyNumericCtr}, Path=IsReadOnly}"
+                                Text="{Binding RelativeSource={RelativeSource AncestorType=My:MyNumericCtr}, Path=Value}" />
+                        </Grid>
+                        <Rectangle
+                            x:Name="mid_rect_one"
+                            Grid.Column="1"
+                            Width="1"
+                            Fill="{TemplateBinding BorderBrush}" />
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Button
+                                x:Name="PART_Add_Border"
+                                Width="40"
+                                My:ElementExten.ButtonType="Icon"
+                                My:ElementExten.IcoAngle="180"
+                                My:ElementExten.IcoHeight="6"
+                                My:ElementExten.IcoPathData="M76 326L490.6 740.7c5.7 5.7 13.3 8.79999999 21.4 8.8s15.69999999-3.2 21.4-8.8L948 326c8.6-8.6 11.2-21.59999999 6.5-32.9-4.7-11.3-15.69999999-18.6-27.9-18.6l-829.3 0c-12.2 0-23.2 7.4-27.9 18.6-4.6 11.3-2.1 24.3 6.6 32.9z"
+                                My:ElementExten.IcoWidth="13"
+                                Background="{TemplateBinding Foreground}" />
+
+
+                            <Rectangle
+                                x:Name="mid_rect_Tow"
+                                Grid.Row="1"
+                                Height="1"
+                                Fill="{TemplateBinding BorderBrush}" />
+
+                            <Button
+                                x:Name="PART_Reduce_Border"
+                                Grid.Row="2"
+                                Width="40"
+                                My:ElementExten.ButtonType="Icon"
+                                My:ElementExten.IcoAngle="0"
+                                My:ElementExten.IcoHeight="6"
+                                My:ElementExten.IcoPathData="M76 326L490.6 740.7c5.7 5.7 13.3 8.79999999 21.4 8.8s15.69999999-3.2 21.4-8.8L948 326c8.6-8.6 11.2-21.59999999 6.5-32.9-4.7-11.3-15.69999999-18.6-27.9-18.6l-829.3 0c-12.2 0-23.2 7.4-27.9 18.6-4.6 11.3-2.1 24.3 6.6 32.9z"
+                                My:ElementExten.IcoWidth="13"
+                                Background="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Grid>
+
+                </Border>
+
+                <ControlTemplate.Triggers>
+                    <Trigger SourceName="PART_Reduce_Border" Property="IsEnabled" Value="false">
+                        <Setter TargetName="PART_Reduce_Border" Property="Opacity" Value="0.56" />
+                    </Trigger>
+                    <Trigger SourceName="PART_Add_Border" Property="IsEnabled" Value="false">
+                        <Setter TargetName="PART_Add_Border" Property="Opacity" Value="0.56" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <!--<Setter TargetName="bg" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+              <Setter TargetName="left_fill_Tow" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+              <Setter TargetName="right_fill_Tow" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+              <Setter TargetName="right_fill_one" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+              <Setter TargetName="mid_rect_one" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />
+              <Setter TargetName="mid_rect_tow" Property="Fill" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=HoverBorderBrush}" />-->
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+
+
+        </Style.Resources>
+
+
+
+        <Style.Triggers>
+            <Trigger Property="My:ElementExten.TextBoxType" Value="Numeric_Type_One">
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="Height" Value="32" />
+                <Setter Property="Opacity" Value="1" />
+                <Setter Property="Padding" Value="3,0" />
+                <Setter Property="BorderBrush" Value="{DynamicResource CommonBorder_Color}" />
+
+                <Setter Property="Background" Value="{DynamicResource Common_Color}" />
+                <Setter Property="My:ElementExten.CornerRadius" Value="4" />
+                <Setter Property="Foreground" Value="{DynamicResource Comon_Font_Color}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Template" Value="{DynamicResource MyNumeric_type_One_ControlTemplate}" />
+            </Trigger>
+
+            <Trigger Property="My:ElementExten.TextBoxType" Value="Numeric_Type_Tow">
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="Height" Value="32" />
+                <Setter Property="Opacity" Value="1" />
+                <Setter Property="Padding" Value="3,0" />
+                <Setter Property="BorderBrush" Value="{DynamicResource CommonBorder_Color}" />
+
+                <Setter Property="Background" Value="{DynamicResource Common_Color}" />
+                <Setter Property="My:ElementExten.CornerRadius" Value="4" />
+                <Setter Property="Foreground" Value="{DynamicResource Comon_Font_Color}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Template" Value="{DynamicResource MyNumeric_type_Tow_ControlTemplate}" />
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.76" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style BasedOn="{StaticResource MyNumericStyle}" TargetType="{x:Type My:MyNumericCtr}" />
+
+</ResourceDictionary>

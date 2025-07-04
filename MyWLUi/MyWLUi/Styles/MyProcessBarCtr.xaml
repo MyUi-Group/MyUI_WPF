@@ -1,0 +1,247 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:My="clr-namespace:MyWLUi.Controls"
+    xmlns:MyConvert="clr-namespace:MyWLUi.Converts"
+    xmlns:MyEvent="clr-namespace:MyWLUi.Args"
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing">
+    <MyConvert:MyProgressBarValueToPercentage x:Key="MyProgressBarValueToPercentage" />
+
+    <MyConvert:ProgressToAngleConverter x:Key="MyProgressToAngleConverter" />
+
+    <Style x:Key="MyProcessBarCtrStyle" TargetType="{x:Type My:MyProcessBarCtr}">
+        <Style.Resources>
+            <ControlTemplate x:Key="MyProcessBarCtr_Rect" TargetType="{x:Type My:MyProcessBarCtr}">
+                <Grid x:Name="TemplateRoot" UseLayoutRounding="True">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{Binding RelativeSource={RelativeSource AncestorType=My:MyProcessBarCtr}, Path=Radius, Mode=OneWay}" />
+                    <Border x:Name="PART_Track" />
+                    <Grid
+                        x:Name="PART_Indicator"
+                        HorizontalAlignment="Left"
+                        ClipToBounds="true">
+                        <Border x:Name="Indicator" Background="{TemplateBinding Foreground}" />
+                        <Border
+                            x:Name="Animation_Border"
+                            Background="{TemplateBinding Foreground}"
+                            RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                    </Grid>
+                    <TextBlock
+                        x:Name="tbPercentage"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Panel.ZIndex="99"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{TemplateBinding TextForeground}">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource MyProgressBarValueToPercentage}">
+                                <Binding Path="Maximum" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="Minimum" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Determinate" />
+                            <VisualState x:Name="Indeterminate">
+                                <Storyboard RepeatBehavior="Forever">
+                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Animation_Border" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0.25" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <PointAnimationUsingKeyFrames Storyboard.TargetName="Animation_Border" Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                                        <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5" />
+                                        <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5" />
+                                        <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5" />
+                                    </PointAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsShowPercent" Value="False">
+                        <Setter TargetName="tbPercentage" Property="Visibility" Value="Collapsed" />
+                    </Trigger>
+                    <Trigger Property="IsShowPercent" Value="True">
+                        <Setter TargetName="tbPercentage" Property="Visibility" Value="Visible" />
+                    </Trigger>
+                    <Trigger Property="Orientation" Value="Vertical">
+                        <Setter TargetName="TemplateRoot" Property="LayoutTransform">
+                            <Setter.Value>
+                                <RotateTransform Angle="-90" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                    <Trigger Property="IsIndeterminate" Value="true">
+                        <Setter TargetName="Indicator" Property="Visibility" Value="Collapsed" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="MyProcessBarCtr_Circle" TargetType="{x:Type My:MyProcessBarCtr}">
+                <Grid x:Name="TemplateRoot">
+
+                    <!--  背景圆环  -->
+                    <Ellipse
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Width}"
+                        Fill="Transparent"
+                        Stroke="{TemplateBinding Background}"
+                        StrokeThickness="10" />
+
+                    <!--  进度条轨道  -->
+                    <ed:Arc
+                        x:Name="PART_Track"
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Width}"
+                        Panel.ZIndex="1"
+                        ArcThickness="10"
+                        ArcThicknessUnit="Pixel"
+                        Fill="{TemplateBinding Foreground}"
+                        RenderTransformOrigin="0.5,0.5"
+                        StartAngle="0"
+                        Stretch="None"
+                        StrokeEndLineCap="Round"
+                        StrokeStartLineCap="Round">
+                        <ed:Arc.EndAngle>
+                            <MultiBinding Converter="{StaticResource MyProgressToAngleConverter}">
+                                <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="Maximum" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding>
+                        </ed:Arc.EndAngle>
+                        <ed:Arc.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-90" />
+                            </TransformGroup>
+                        </ed:Arc.RenderTransform>
+                    </ed:Arc>
+
+                    <!--  不确定状态动画轨道  -->
+                    <ed:Arc
+                        x:Name="PART_Track_Repeat"
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Width}"
+                        Panel.ZIndex="1"
+                        ArcThickness="10"
+                        ArcThicknessUnit="Pixel"
+                        EndAngle="90"
+                        Fill="{TemplateBinding Foreground}"
+                        RenderTransformOrigin="0.5,0.5"
+                        StartAngle="0"
+                        Stretch="None"
+                        StrokeEndLineCap="Round"
+                        StrokeStartLineCap="Round"
+                        Visibility="Collapsed">
+                        <ed:Arc.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-90" />
+                                <!--  从12点方向开始  -->
+                            </TransformGroup>
+                        </ed:Arc.RenderTransform>
+                    </ed:Arc>
+
+                    <!--  进度百分比文本  -->
+                    <TextBlock
+                        x:Name="tbPercentage"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Panel.ZIndex="99"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{TemplateBinding TextForeground}">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource MyProgressBarValueToPercentage}">
+                                <Binding Path="Maximum" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="Minimum" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Grid>
+
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsShowPercent" Value="False">
+                        <Setter TargetName="tbPercentage" Property="Visibility" Value="Collapsed" />
+                    </Trigger>
+                    <Trigger Property="IsShowPercent" Value="True">
+                        <Setter TargetName="tbPercentage" Property="Visibility" Value="Visible" />
+                    </Trigger>
+                    <!--  不确定状态触发器  -->
+                    <Trigger Property="IsIndeterminate" Value="True">
+                        <Setter TargetName="PART_Track" Property="Visibility" Value="Collapsed" />
+                        <Setter TargetName="PART_Track_Repeat" Property="Visibility" Value="Visible" />
+                        <Trigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="PART_Track_Repeat"
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                        From="0"
+                                        To="360"
+                                        Duration="0:0:1.5" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                    </Trigger>
+
+                    <!--  值为0时隐藏进度条  -->
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsIndeterminate" Value="False" />
+                            <Condition Property="Value" Value="0" />
+                        </MultiTrigger.Conditions>
+                        <Setter TargetName="PART_Track" Property="Visibility" Value="Collapsed" />
+                    </MultiTrigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Style.Resources>
+
+
+
+
+        <Style.Triggers>
+            <Trigger Property="ProcessBarType" Value="Rect">
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                <Setter Property="Opacity" Value="1" />
+                <Setter Property="Height" Value="24" />
+                <Setter Property="My:ElementExten.CornerRadius" Value="4" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Template" Value="{DynamicResource MyProcessBarCtr_Rect}" />
+            </Trigger>
+            <Trigger Property="ProcessBarType" Value="Circle">
+
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Height" Value="100" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                <Setter Property="Opacity" Value="1" />
+                <Setter Property="My:ElementExten.CornerRadius" Value="4" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Template" Value="{DynamicResource MyProcessBarCtr_Circle}" />
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.76" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style BasedOn="{StaticResource MyProcessBarCtrStyle}" TargetType="{x:Type My:MyProcessBarCtr}" />
+
+</ResourceDictionary>

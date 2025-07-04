@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>G:\Git\MyWLUi\MyWLUi\MyWLUi\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Page Update="ControlThemes\Theme_Base.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ControlThemes\Theme_Color.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyDrawWinCtr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyExtenControlCtr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Slider.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\TabControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\RadioButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\CheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyTimePickerCtr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyTimeSelector.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyCalendarItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyCalendar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyPageButtonCtr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ComBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\DataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Message.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\PasswordBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyDatePickerCtr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ListBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyNumericCtr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MyProcessBarCtr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
