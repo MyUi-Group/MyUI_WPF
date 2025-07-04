@@ -1,6 +1,6 @@
-﻿using MyWLUi.Args;
-using MyWLUi.Controls.Base;
-using MyWLUi.Global;
+﻿using MyUi.Args;
+using MyUi.Controls.Base;
+using  MyUi.Global;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyCalendar:CustomCtrBase
     {

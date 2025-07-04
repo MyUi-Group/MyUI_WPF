@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:My="clr-namespace:MyWLUi.Controls"
-    xmlns:MyConvert="clr-namespace:MyWLUi.Converts">
+    xmlns:My="clr-namespace:MyUi.Controls"
+    xmlns:MyConvert="clr-namespace:MyUi.Converts">
     <MyConvert:StringIsEmptyConverter x:Key="StringIsEmptyConverter" />
 
     <!--  三角形填充颜色  -->

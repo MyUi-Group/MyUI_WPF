@@ -1,13 +1,13 @@
 ﻿<UserControl
-    x:Class="MyWLUiDemo.Views.ListBoxPage"
+    x:Class="MyUiDemo.Views.ListBoxPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:My="clr-namespace:MyWLUi.Controls;assembly=MyWLUi"
+    xmlns:My="clr-namespace:MyUi.Controls;assembly=MyUi"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-    xmlns:local="clr-namespace:MyWLUiDemo.Views"
+    xmlns:local="clr-namespace:MyUiDemo.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:MyWLUiDemo.ViewModels"
+    xmlns:vm="clr-namespace:MyUiDemo.ViewModels"
     mc:Ignorable="d">
     <UserControl.DataContext>
         <vm:ListBoxPageViewModel />

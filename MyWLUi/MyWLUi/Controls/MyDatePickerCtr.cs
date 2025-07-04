@@ -1,6 +1,6 @@
-﻿using MyWLUi.Args;
-using MyWLUi.Controls.Base;
-using MyWLUi.Global;
+﻿using MyUi.Args;
+using MyUi.Controls.Base;
+using  MyUi.Global;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyDatePickerCtr : CustomCtrBase
     {

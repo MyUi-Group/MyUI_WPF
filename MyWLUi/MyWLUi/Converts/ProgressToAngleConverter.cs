@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace MyWLUi.Converts
+namespace MyUi.Converts
 {
     public class ProgressToAngleConverter : IMultiValueConverter
     {

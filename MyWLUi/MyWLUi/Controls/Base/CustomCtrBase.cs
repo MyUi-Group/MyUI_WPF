@@ -1,4 +1,4 @@
-﻿using MyWLUi.Args;
+﻿using MyUi.Args;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MyWLUi.Controls.Base
+namespace MyUi.Controls.Base
 {
     public class CustomCtrBase : System.Windows.Controls.Control
     {

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows;
-using MyWLUi.Controls.Transition.Enum;
+using MyUi.Controls.Transition.Enum;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyTransition : ContentControl
     {

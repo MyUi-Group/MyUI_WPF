@@ -1,6 +1,6 @@
-﻿using MyWLUi.Controls;
-using MyWLUi.Controls.Message;
-using MyWLUi.Controls.Message.Enum;
+﻿using MyUi.Controls;
+using MyUi.Controls.Message;
+using MyUi.Controls.Message.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MyWLUi.Global
+namespace  MyUi.Global
 {
     public class MessageControl
     {

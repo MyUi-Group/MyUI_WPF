@@ -1,5 +1,5 @@
-﻿using MyWLUi.Args;
-using MyWLUi.Global;
+﻿using MyUi.Args;
+using  MyUi.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     [TemplatePart(Name = "Drawer", Type = typeof(Border))]
     public class MyDrawWinCtr : System.Windows.Controls.ContentControl

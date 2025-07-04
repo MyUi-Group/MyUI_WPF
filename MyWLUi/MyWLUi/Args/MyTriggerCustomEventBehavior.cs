@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xaml.Behaviors;
-using MyWLUi.Controls.Base;
+using MyUi.Controls.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
 
-namespace MyWLUi.Args
+namespace MyUi.Args
 {
     public class MyTriggerCustomEventBehavior : Behavior<CustomCtrBase>
     {

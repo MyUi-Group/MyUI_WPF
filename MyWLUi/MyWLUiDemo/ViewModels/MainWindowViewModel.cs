@@ -1,6 +1,6 @@
-﻿using MyWLUiDemo.Help;
-using MyWLUiDemo.Models;
-using MyWLUiDemo.Mvvm;
+﻿using MyUiDemo.Help;
+using MyUiDemo.Models;
+using MyUiDemo.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MyWLUiDemo.ViewModels
+namespace MyUiDemo.ViewModels
 {
     internal class MainWindowViewModel : BindableBase
     {
@@ -48,7 +48,7 @@ namespace MyWLUiDemo.ViewModels
         {
             var list = new List<MenuModel>();
             Assembly assembly = Assembly.GetExecutingAssembly();
-            var data = assembly.DefinedTypes.Where(o => o.FullName.Contains("MyWLUiDemo.Views"));
+            var data = assembly.DefinedTypes.Where(o => o.FullName.Contains("MyUiDemo.Views"));
 
             foreach (var type in data)
             {

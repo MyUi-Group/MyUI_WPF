@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MessageHost : System.Windows.Controls.ItemsControl
     {

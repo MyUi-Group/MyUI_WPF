@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:My="clr-namespace:MyWLUi.Controls"
-    xmlns:MyEvent="clr-namespace:MyWLUi.Args">
+    xmlns:My="clr-namespace:MyUi.Controls"
+    xmlns:MyEvent="clr-namespace:MyUi.Args">
 
 
     <Style x:Key="MyCheckBoxStyle" TargetType="{x:Type CheckBox}">

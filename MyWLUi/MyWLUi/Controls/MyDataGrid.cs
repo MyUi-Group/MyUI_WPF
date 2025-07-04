@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyDataGrid : System.Windows.Controls.DataGrid
     {

@@ -1,4 +1,4 @@
-﻿using MyWLUi.Controls.Message.Enum;
+﻿using MyUi.Controls.Message.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyMessage : ContentControl
     {

@@ -1,4 +1,4 @@
-﻿using MyWLUi.Global;
+﻿using  MyUi.Global;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace MyWLUi.Converts
+namespace MyUi.Converts
 {
     /// <summary>
     /// LCL

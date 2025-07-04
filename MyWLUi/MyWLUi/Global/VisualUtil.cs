@@ -7,7 +7,7 @@ using System.Windows.Media;
 using System.Windows;
 using System.Reflection;
 
-namespace MyWLUi.Global
+namespace  MyUi.Global
 {
     internal static class VisualUtil
     {

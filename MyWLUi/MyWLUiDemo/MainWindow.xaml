@@ -1,13 +1,13 @@
 ﻿<Window
-    x:Class="MyWLUiDemo.MainWindow"
+    x:Class="MyUiDemo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:My="clr-namespace:MyWLUi.Controls;assembly=MyWLUi"
-    xmlns:MyGlobal="clr-namespace:MyWLUi.Global;assembly=MyWLUi"
+    xmlns:My="clr-namespace:MyUi.Controls;assembly=MyUi"
+    xmlns:MyGlobal="clr-namespace:MyUi.Global;assembly=MyUi"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:MyWLUiDemo"
+    xmlns:local="clr-namespace:MyUiDemo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:MyWLUiDemo.ViewModels"
+    xmlns:vm="clr-namespace:MyUiDemo.ViewModels"
     Title="MainWindow"
     WindowState="Maximized"
     mc:Ignorable="d">

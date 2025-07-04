@@ -1,5 +1,5 @@
-﻿using MyWLUi.Args;
-using MyWLUi.Controls.Base;
+﻿using MyUi.Args;
+using MyUi.Controls.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyTimePickerCtr : CustomCtrBase
     {

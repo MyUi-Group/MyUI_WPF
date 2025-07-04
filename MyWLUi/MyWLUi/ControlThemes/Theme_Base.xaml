@@ -1,27 +1,27 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/ControlThemes/Theme_Color.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/CheckBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/RadioButton.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/ScrollViewer.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/Button.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/ComBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/TextBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/PasswordBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/Message.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/DataGrid.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyPageButtonCtr.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyTimeSelector.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyTimePickerCtr.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyCalendar.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyCalendarItem.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyDatePickerCtr.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/ListBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/TabControl.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyNumericCtr.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyProcessBarCtr.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyExtenControlCtr.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/MyDrawWinCtr.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MyWLUi;component/Styles/Slider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/ControlThemes/Theme_Color.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/CheckBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/RadioButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/ScrollViewer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/Button.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/ComBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/TextBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/PasswordBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/Message.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/DataGrid.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyPageButtonCtr.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyTimeSelector.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyTimePickerCtr.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyCalendar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyCalendarItem.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyDatePickerCtr.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/ListBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/TabControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyNumericCtr.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyProcessBarCtr.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyExtenControlCtr.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/MyDrawWinCtr.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ MyUi;component/Styles/Slider.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

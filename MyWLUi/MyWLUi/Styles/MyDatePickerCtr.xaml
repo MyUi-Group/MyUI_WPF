@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:My="clr-namespace:MyWLUi.Controls"
-    xmlns:MyConvert="clr-namespace:MyWLUi.Converts"
-    xmlns:MyEvent="clr-namespace:MyWLUi.Args">
+    xmlns:My="clr-namespace:MyUi.Controls"
+    xmlns:MyConvert="clr-namespace:MyUi.Converts"
+    xmlns:MyEvent="clr-namespace:MyUi.Args">
     <MyConvert:SelectDateStateConverter x:Key="MySelectDateStateConverter" />
     <MyConvert:TimeChangeOnDoubleDateConverter x:Key="MyTimeChangeOnDoubleDateConverter" />
     <MyConvert:TimeSelecConverter x:Key="MyTimeSelecConverter" />

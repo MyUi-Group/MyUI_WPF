@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     [TemplatePart(Name = "PART_Reduce_Border", Type =typeof(Button))]
     [TemplatePart(Name = "PART_Add_Border", Type = typeof(Button))]

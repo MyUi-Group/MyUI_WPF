@@ -1,4 +1,4 @@
-﻿using MyWLUi.Global;
+﻿using  MyUi.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     [TemplatePart(Name = "TemplateRoot", Type = typeof(Panel))]
     public class MyProcessBarCtr: System.Windows.Controls.ProgressBar

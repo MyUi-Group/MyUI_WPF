@@ -1,12 +1,12 @@
-﻿using MyWLUi.Global;
-using MyWLUiDemo.Mvvm;
+﻿using  MyUi.Global;
+using MyUiDemo.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyWLUiDemo.ViewModels
+namespace MyUiDemo.ViewModels
 {
     internal class TextBoxViewModel : BindableBase
     {

@@ -1,5 +1,5 @@
-﻿using MyWLUi.Args;
-using MyWLUi.Controls.Base;
+﻿using MyUi.Args;
+using MyUi.Controls.Base;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyPageButtonCtr : CustomCtrBase
     {

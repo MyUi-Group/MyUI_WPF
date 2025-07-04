@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyWLUi.Controls.Message.Enum
+namespace MyUi.Controls.Message.Enum
 {
     public enum MessageType
     {

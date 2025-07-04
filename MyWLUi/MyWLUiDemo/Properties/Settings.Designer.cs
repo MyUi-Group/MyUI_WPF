@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyWLUiDemo.Properties
+namespace MyUiDemo.Properties
 {
 
 

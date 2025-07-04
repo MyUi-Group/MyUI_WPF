@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MyWLUi.Args
+namespace MyUi.Args
 {
     public class MyCustomRoutEventArgs<T> : RoutedEventArgs
     {

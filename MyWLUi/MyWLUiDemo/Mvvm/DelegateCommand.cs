@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MyWLUiDemo.Mvvm
+namespace MyUiDemo.Mvvm
 {
     internal class DelegateCommand : ICommand
     {

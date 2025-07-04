@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Controls.Primitives;
-using MyWLUi.Global;
-using MyWLUi.Controls.Extens;
-using MyWLUi.Controls.DataGrid;
+using  MyUi.Global;
+using MyUi.Controls.Extens;
+using MyUi.Controls.DataGrid;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     internal class RightFrozenSupportedDataGridCellsPanel : DataGridCellsPanel
     {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace MyWLUiDemo
+namespace MyUiDemo
 {
     /// <summary>
     /// App.xaml 的交互逻辑

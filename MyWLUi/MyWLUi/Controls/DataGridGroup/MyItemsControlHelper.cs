@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     internal class MyItemsControlHelper
     {

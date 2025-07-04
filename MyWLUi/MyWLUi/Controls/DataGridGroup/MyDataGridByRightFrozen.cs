@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     internal class MyDataGridByRightFrozen:MyDataGrid
     {

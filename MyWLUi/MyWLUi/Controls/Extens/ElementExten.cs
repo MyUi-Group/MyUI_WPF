@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
-using MyWLUi.Args;
-using MyWLUi.Global;
+using MyUi.Args;
+using  MyUi.Global;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     /// <summary>
     /// LCL

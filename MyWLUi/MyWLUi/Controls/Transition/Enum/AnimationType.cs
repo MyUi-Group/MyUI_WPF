@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyWLUi.Controls.Transition.Enum
+namespace MyUi.Controls.Transition.Enum
 {
     public enum AnimationType
     {

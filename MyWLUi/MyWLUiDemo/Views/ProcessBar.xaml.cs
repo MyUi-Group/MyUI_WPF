@@ -1,4 +1,4 @@
-﻿using MyWLUiDemo.Help;
+﻿using MyUiDemo.Help;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyWLUiDemo.Views
+namespace MyUiDemo.Views
 {
     /// <summary>
     /// ProcessBar.xaml 的交互逻辑

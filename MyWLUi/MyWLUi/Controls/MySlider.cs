@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MySlider: System.Windows.Controls.Slider
     {

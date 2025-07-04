@@ -1,6 +1,6 @@
-﻿using MyWLUi.Args;
-using MyWLUi.Controls.Base;
-using MyWLUi.Global;
+﻿using MyUi.Args;
+using MyUi.Controls.Base;
+using  MyUi.Global;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -13,7 +13,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
-namespace MyWLUi.Controls
+namespace MyUi.Controls
 {
     public class MyCalendarItem : CustomCtrBase
     {

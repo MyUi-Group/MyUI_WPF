@@ -215,11 +215,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyWLUi\MyWLUi.csproj">
+    <ProjectReference Include="..\MyWLUi\MyUi.csproj">
       <Project>{bd9f9f6c-b968-4f6c-a22f-234bde356bb5}</Project>
-      <Name>MyWLUi</Name>
+      <Name>MyUi</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
