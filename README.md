@@ -18,7 +18,7 @@ MyUI是作者根据实际项目中遇到的案例列整合开发而成，故而�
 ## 想找我外包？
 WPF前端后端、上位机等外包联系 QQ : 2638662731 微信：TCDJ999999666
 ## 鼓励打赏？
-![MONEY](https://github.com/user-attachments/assets/957c65ef-ba56-4361-bf30-d1feec652e42)
+![5](https://github.com/user-attachments/assets/92f4d289-04ba-4fbb-ac15-b716489e5121)
 
 
 
