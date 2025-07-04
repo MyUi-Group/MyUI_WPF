@@ -13,7 +13,7 @@ MyUI是作者根据实际项目中遇到的案例列整合开发而成，故而�
 ## 学习文档
 [在线文档](待完善)  
 ## 作者
-- [我吃土豆丝/MyUi-Group](https://github.com/2638662731) 
+- [我吃土豆丝/MyUi-Group](https://github.com/MyUi-Group) 
 
 ## 想找我外包？
 WPF前端后端、上位机等外包联系 QQ : 2638662731 微信：TCDJ999999666
@@ -24,7 +24,7 @@ WPF前端后端、上位机等外包联系 QQ : 2638662731 微信：TCDJ99999966
 
 ## 使用
 
-步骤一 : 添加LayUI.Wpf Nuget包;
+步骤一 : 添加MyUi Nuget包;
 
 ```Install-Package MyUi```
 
@@ -44,8 +44,9 @@ WPF前端后端、上位机等外包联系 QQ : 2638662731 微信：TCDJ99999966
 步骤四: 完成 
 
 ## 截图
-![1](https://github.com/user-attachments/assets/696b7d12-6f27-4707-a815-78a0f583f013)
-![2](https://github.com/user-attachments/assets/27f7f421-da64-4f37-8f1c-e2cc7138afa7)
-![3](https://github.com/user-attachments/assets/fdd981ee-1f9f-4752-8c83-d1cad2a65da1)
+
+![image](https://github.com/user-attachments/assets/696b7d12-6f27-4707-a815-78a0f583f013)
+![image](https://github.com/user-attachments/assets/27f7f421-da64-4f37-8f1c-e2cc7138afa7)
+![image](https://github.com/user-attachments/assets/fdd981ee-1f9f-4752-8c83-d1cad2a65da1)
 
 
