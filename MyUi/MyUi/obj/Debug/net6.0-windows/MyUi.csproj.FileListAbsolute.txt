@@ -1,0 +1,6 @@
+G:\Git\MyUI\MyUi\MyUi\obj\Debug\net6.0-windows\MyUi.csproj.AssemblyReference.cache
+G:\Git\MyUI\MyUi\MyUi\obj\Debug\net6.0-windows\ControlThemes\Theme_Base.baml
+G:\Git\MyUI\MyUi\MyUi\obj\Debug\net6.0-windows\ControlThemes\Theme_Color.baml
+G:\Git\MyUI\MyUi\MyUi\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+G:\Git\MyUI\MyUi\MyUi\obj\Debug\net6.0-windows\MyUi_MarkupCompile.cache
+G:\Git\MyUI\MyUi\MyUi\obj\Debug\net6.0-windows\MyUi_MarkupCompile.lref

@@ -1,0 +1,4 @@
+G:\Git\MyUI\MyWLUi\MyWLUi\bin\Release\net4.6.2\publish\MyUi.dll
+G:\Git\MyUI\MyWLUi\MyWLUi\bin\Release\net4.6.2\publish\MyUi.pdb
+G:\Git\MyUI\MyWLUi\MyWLUi\bin\Release\net4.6.2\publish\Microsoft.Xaml.Behaviors.dll
+G:\Git\MyUI\MyWLUi\MyWLUi\bin\Release\net4.6.2\publish\Microsoft.Expression.Drawing.dll

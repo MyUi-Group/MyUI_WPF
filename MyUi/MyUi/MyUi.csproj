@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	 <TargetFrameworks>net4.6.2;net4.7.2;net4.8</TargetFrameworks>
+	  <UseWPF>true</UseWPF>
+	  <AssemblyTitle>MyWLUi</AssemblyTitle>
+	  <Description>这是一个非常精美的WPF组件库，代码简洁、交互性强；开发者可循环地使用其组件，提高开发效率、加快进度；MyUI是作者根据实际项目中遇到的案例列整合开发而成，故而其易用性强、扩展性强、兼容性强、案例丰富</Description>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <GenerateDocumentationFile>False</GenerateDocumentationFile>
+	  <PackageProjectUrl></PackageProjectUrl>
+	  <Authors>LiuChangLai</Authors>
+	  <Title>MyUI</Title>
+	  <RepositoryUrl>https://github.com/2638662731/MyUI.git</RepositoryUrl>
+	  <AssemblyVersion>1.0.1</AssemblyVersion>
+	  <FileVersion>1.0.1</FileVersion>
+	  <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="Unnoficial.Microsoft.Expression.Drawing" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

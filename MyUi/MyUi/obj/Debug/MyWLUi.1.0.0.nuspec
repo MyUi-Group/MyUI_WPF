@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MyWLUi</id>
+    <version>1.0.0</version>
+    <authors>MyWLUi</authors>
+    <description>这是一款WPF版MyWLUi库</description>
+    <repository type="git" commit="167f9236b6e14437945b6b99e24a4e1720a7a874" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.135" exclude="Build,Analyzers" />
+        <dependency id="Unnoficial.Microsoft.Expression.Drawing" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.135" exclude="Build,Analyzers" />
+        <dependency id="Unnoficial.Microsoft.Expression.Drawing" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.8">
+        <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.135" exclude="Build,Analyzers" />
+        <dependency id="Unnoficial.Microsoft.Expression.Drawing" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Windows.Forms" targetFramework=".NETFramework4.6.2, .NETFramework4.7.2, .NETFramework4.8" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="G:\Git\MyUI\MyWLUi\MyWLUi\bin\Debug\net4.6.2\MyWLUi.dll" target="lib\net462\MyWLUi.dll" />
+    <file src="G:\Git\MyUI\MyWLUi\MyWLUi\bin\Debug\net4.7.2\MyWLUi.dll" target="lib\net472\MyWLUi.dll" />
+    <file src="G:\Git\MyUI\MyWLUi\MyWLUi\bin\Debug\net4.8\MyWLUi.dll" target="lib\net48\MyWLUi.dll" />
+  </files>
+</package>

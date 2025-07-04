@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MyUi</id>
+    <version>1.0.1</version>
+    <title>MyUI</title>
+    <authors>LiuChangLai</authors>
+    <description>这是一个非常精美的WPF组件库，代码简洁、交互性强；开发者可循环地使用其组件，提高开发效率、加快进度；MyUI是作者根据实际项目中遇到的案例列整合开发而成，故而其易用性强、扩展性强、兼容性强、案例丰富</description>
+    <repository type="git" url="https://github.com/2638662731/MyUI.git" commit="fd0781405345f7704057105f38178d190c7aad0e" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.135" exclude="Build,Analyzers" />
+        <dependency id="Unnoficial.Microsoft.Expression.Drawing" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.135" exclude="Build,Analyzers" />
+        <dependency id="Unnoficial.Microsoft.Expression.Drawing" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.8">
+        <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.135" exclude="Build,Analyzers" />
+        <dependency id="Unnoficial.Microsoft.Expression.Drawing" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Windows.Forms" targetFramework=".NETFramework4.6.2, .NETFramework4.7.2, .NETFramework4.8" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="G:\Git\MyUI\MyWLUi\MyWLUi\bin\Release\net4.6.2\MyUi.dll" target="lib\net462\MyUi.dll" />
+    <file src="G:\Git\MyUI\MyWLUi\MyWLUi\bin\Release\net4.7.2\MyUi.dll" target="lib\net472\MyUi.dll" />
+    <file src="G:\Git\MyUI\MyWLUi\MyWLUi\bin\Release\net4.8\MyUi.dll" target="lib\net48\MyUi.dll" />
+  </files>
+</package>
