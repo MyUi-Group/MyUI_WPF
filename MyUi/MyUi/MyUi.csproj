@@ -9,6 +9,7 @@
 	  <GenerateDocumentationFile>False</GenerateDocumentationFile>
 	  <PackageProjectUrl></PackageProjectUrl>
 	  <Authors>LiuChangLai</Authors>
+	  <PackageTags>WPF,MyUi,myui</PackageTags> 
 	  <Title>MyUI</Title>
 	  <RepositoryUrl>https://github.com/2638662731/MyUI.git</RepositoryUrl>
 	  <AssemblyVersion>1.0.1</AssemblyVersion>
